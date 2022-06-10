@@ -1,3 +1,13 @@
+# Challenge 4
+Come avrete notato, man mano che le challenge si susseguivano vi erano meno
+linee guida sul design da seguire, in modo tale da potervi dare libera espressione.
+In questa challange bonus, non obbligatoria, ma che varrà comunque come punto
+bonus nel voto complessivo finale, sarete liberi di poter dar sfogo alla vostra
+fantasia, creando una piccola application utilizzando una delle API riportate qui di
+seguito.
+Potete prendere spunto dalle challange precedenti o creare qualcosa di nuovo .. a
+voi la scelta!
+
 # CodingChallenge
 
 In Branch Master, you will find an empty Angular Project.
