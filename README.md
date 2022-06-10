@@ -1,3 +1,9 @@
+# Challenge 3
+Realizzare un’applicazione web che permetta, dato in un campo input una o piu'
+lettere e cliccando un bottone “Lista Cocktails”, la generazione di una lista di
+cocktail.
+Per ogni riga della lista prevedere 1 bottone "Salva preferito".
+
 # CodingChallenge
 
 In Branch Master, you will find an empty Angular Project.
