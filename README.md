@@ -1,3 +1,8 @@
+# Challenge 1
+Realizzare un’applicazione web che permetta, cliccando un bottone “Genera
+Attività”, la generazione di attività casuali da svolgere e, eventualmente, salvarle
+fra i preferiti tramite un apposito bottone “Salva Preferito”.
+
 # CodingChallenge
 
 In Branch Master, you will find an empty Angular Project.
