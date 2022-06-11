@@ -29,7 +29,10 @@
           <span class="fs-6 text-secondary">{{favorite.activity}}</span>
         </div>
         <div class="col-1 d-none d-md-flex p-2 justify-content-center">
-          <span class="fs-6 text-secondary">{{favorite.accessibility}}</span>
+          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility <= 0.3">Low</span>
+          <span class="fs-6 text-secondary"
+            *ngIf="favorite.accessibility > 0.3 && favorite.accessibility < 0.5">Medium</span>
+          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility >= 0.5">High</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
           <span class="fs-6 text-secondary">{{favorite.type}}</span>
@@ -41,7 +44,8 @@
           <span class="fs-6 text-secondary">{{favorite.price}}</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
-          <a [href]="favorite.link" class="fs-6 text-secondary">Link</a>
+          <a [href]="favorite.link" class="fs-6 text-secondary" *ngIf="favorite.link !== ''">Link</a>
+          <span class="fs-6 text-secondary" *ngIf="favorite.link === ''">No link</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
           <button type="button" class="btn btn-danger" (click)="deleteFavorite(favorite.key)">Delete</button>
