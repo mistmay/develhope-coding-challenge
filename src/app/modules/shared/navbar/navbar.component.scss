@@ -1,0 +1,44 @@
+.navbar{
+    background-color: rgb(254, 255, 238);
+    height: 90px;
+    padding: 0px 60px 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button{
+        height: 40px;
+        width: 200px;
+        border: none;
+        border-radius: 3px;
+        filter: drop-shadow(2px 3px 10px #9b9b9b);
+        transform: scale(100%);
+        transition: 0.24s;
+            &:hover{
+                transform: scale(105%);
+                transition: 0.24s;
+                filter: drop-shadow(2px 3px 10px #b8b8b8);
+            }
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size: 52px;
+            font-weight: bolder;
+            color: rgb(22, 22, 72);
+        }
+        svg{
+            height: 50px;
+            fill: rgb(133, 198, 244);
+            transform: rotate(0rad);
+            transition: 0.4s;
+            &:hover{
+                transform: rotate(-1rad);
+                transition: 0.4s;
+                fill: rgb(244, 166, 182);
+            }
+        }
+    }
+}

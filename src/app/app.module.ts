@@ -7,10 +7,11 @@ import { SearchModule } from './modules/search/search.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { HomeComponent } from './views/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
