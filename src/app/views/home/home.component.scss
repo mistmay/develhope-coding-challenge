@@ -1,0 +1,14 @@
+main {
+  gap: 20px;
+}
+
+@media (min-width: 1200px) {
+  main {
+    gap: 4%;
+
+    app-generate-activity,
+    app-favorite-activity {
+      width: 48%;
+    }
+  }
+}

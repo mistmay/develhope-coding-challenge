@@ -1,1 +1,61 @@
-<p>favorite-activity works!</p>
+<section class="px-3 py-4 border border-light rounded overflow-hidden text-center">
+  <div class="container-fluid">
+    <div class="row title-row">
+      <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Activity</h3>
+      </div>
+      <div class="col-1 d-none d-md-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Difficulty</h3>
+      </div>
+      <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Type</h3>
+      </div>
+      <div class="col-2 d-none d-md-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Partecipants</h3>
+      </div>
+      <div class="col-1 d-none d-md-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Price</h3>
+      </div>
+      <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Link</h3>
+      </div>
+      <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+        <h3 class="fs-6 fw-bold">Action</h3>
+      </div>
+    </div>
+    <ng-container *ngIf="favorites.length > 0; else noData">
+      <div class="row data-row" *ngFor="let favorite of favorites">
+        <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+          <span class="fs-6 text-secondary">{{favorite.activity}}</span>
+        </div>
+        <div class="col-1 d-none d-md-flex p-2 justify-content-center">
+          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility <= 0.3">Low</span>
+          <span class="fs-6 text-secondary"
+            *ngIf="favorite.accessibility > 0.3 && favorite.accessibility < 0.5">Medium</span>
+          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility >= 0.5">High</span>
+        </div>
+        <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+          <span class="fs-6 text-secondary">{{favorite.type}}</span>
+        </div>
+        <div class="col-2 d-none d-md-flex p-2 justify-content-center">
+          <span class="fs-6 text-secondary">{{favorite.partecipants}}</span>
+        </div>
+        <div class="col-1 d-none d-md-flex p-2 justify-content-center">
+          <span class="fs-6 text-secondary">{{favorite.price}}</span>
+        </div>
+        <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+          <a [href]="favorite.link" class="fs-6 text-secondary" *ngIf="favorite.link !== ''">Link</a>
+          <span class="fs-6 text-secondary" *ngIf="favorite.link === ''">No link</span>
+        </div>
+        <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
+          <button type="button" class="btn btn-danger" (click)="deleteFavorite(favorite.key)">Delete</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+<ng-template #noData>
+  <div class="data-row d-flex justify-content-center align-items-center p-3">
+    <p class="fs-4 text-secondary">No Favorite Activities</p>
+  </div>
+</ng-template>
