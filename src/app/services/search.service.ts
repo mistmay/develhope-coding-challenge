@@ -25,8 +25,6 @@ export class SearchService {
     this.searchHistory.push(name);
     this.searchHistorySubject.next(this.searchHistory);
     localStorage.setItem('searchHistory', JSON.stringify(this.searchHistory));
-    console.log(this.currentId);
-    console.log(this.searchHistory);
   }
 
   deleteSearch(id: number): void {
