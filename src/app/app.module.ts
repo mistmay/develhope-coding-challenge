@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { SearchModule } from './modules/search/search.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 
 
@@ -17,7 +16,8 @@ import { HomeComponent } from './views/home/home.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    SearchModule
+    SearchModule, 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

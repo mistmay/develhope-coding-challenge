@@ -1,0 +1,16 @@
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+
+    .container{
+        border: 1px solid rgb(152, 152, 152);
+        border-radius: 3px;
+        height: 350px;
+        width: 3000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
