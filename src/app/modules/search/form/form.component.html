@@ -1,20 +1,10 @@
-<div class="form-section"> 
-    <h2  *ngIf="n&& n?.invalid && n.touched"  class="error">Devi inserire almeno un carattere!</h2>
-
-    <form [formGroup]="form" (ngSubmit)="getName()" >
-        <input 
-         id="name"
-         type="text" 
-         formControlName="name"
-         placeholder="nome" 
-         minlength="1" 
-         required>
-    
-        <input class="btn" type="submit" value="Ricerca">
-    </form>
-
-   
-
+<div class="form-section">
+  <form [formGroup]="form" (ngSubmit)="search()">
+    <h2 class="error text-center" *ngIf="form.controls['name'].dirty && form.hasError('required', 'name')">Devi inserire
+      almeno un carattere!</h2>
+    <h2 class="error text-center" *ngIf="form.controls['name'].dirty && form.hasError('containsWhiteSpace', 'name')">Non
+      puoi inserire Spazi</h2>
+    <input id="name" type="text" formControlName="name" placeholder="Inserire Nome..." class="rounded p-2">
+    <button class="button" type="submit" [disabled]="form.invalid">Ricerca</button>
+  </form>
 </div>
-
-
