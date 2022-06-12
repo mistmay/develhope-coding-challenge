@@ -1,6 +1,7 @@
+
 import { ApiService } from './../../../api/api.service';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators } from '@angular/forms';
+import {FormGroup, FormControl, Validators,  } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -8,22 +9,35 @@ import {FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  
   //Form Group
   form = new FormGroup({
-    name: new FormControl('' , [Validators.minLength(1), Validators.required] )
+    name: new FormControl('' , [Validators.required,] ) // 
   });
-
-  constructor(private apiNames:ApiService) { }
-  nameData:any;
-
-  
-  ngOnInit(): void {
-    this.nameData = this.apiNames.getName().subscribe((data) => console.log(data));
+  get n(){
+    return this.form.get('name');
   }
+  
+  constructor() { }
+  nameData?:any;
+  name?:string;
+
+  ngOnInit(): void {
+    
+   
+  }
+//Prende il valore inserito nel form e lo inserisce nella variabile name
+getName():void{
+  if(!this.form.valid){
+    return; 
+  }
+  else{
+    return this.name = this.form.controls['name'].value;
+
+  } 
+}
 
 
-// sendName(){
-//   console.warn(this.form.value)
-// }
+
 
 }

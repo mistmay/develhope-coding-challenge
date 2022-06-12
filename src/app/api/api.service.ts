@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   constructor(private apiName: HttpClient) { }
+  nameToFind?:string;
   
   getName() {
-    return this.apiName.get('https://api.genderize.io/?name=nomedaricercare');
+    return this.apiName.get(`https://api.genderize.io/?name=${this.nameToFind}`);
   }
 }

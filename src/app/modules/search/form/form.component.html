@@ -1,6 +1,7 @@
 <div class="form-section"> 
-    <!-- FormGroup non funziona boh -->
-    <form [formGroup]="form">
+    <h2  *ngIf="n&& n?.invalid && n.touched"  class="error">Devi inserire almeno un carattere!</h2>
+
+    <form [formGroup]="form" (ngSubmit)="getName()" >
         <input 
          id="name"
          type="text" 
@@ -9,8 +10,9 @@
          minlength="1" 
          required>
     
-        <input class="btn" type="submit" value="Ricerca" >
+        <input class="btn" type="submit" value="Ricerca">
     </form>
+
    
 
 </div>
