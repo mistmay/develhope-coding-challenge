@@ -1,7 +1,7 @@
 export interface Activity {
     activity: string;
     type: string;
-    partecipants: number;
+    participants: number;
     price: number;
     link: string;
     key: string;

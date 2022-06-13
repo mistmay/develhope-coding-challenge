@@ -38,13 +38,13 @@
           <span class="fs-6 text-secondary">{{favorite.type}}</span>
         </div>
         <div class="col-2 d-none d-md-flex p-2 justify-content-center">
-          <span class="fs-6 text-secondary">{{favorite.partecipants}}</span>
+          <span class="fs-6 text-secondary">{{favorite.participants}}</span>
         </div>
         <div class="col-1 d-none d-md-flex p-2 justify-content-center">
           <span class="fs-6 text-secondary">{{favorite.price}}</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
-          <a [href]="favorite.link" class="fs-6 text-secondary" *ngIf="favorite.link !== ''">Link</a>
+          <a [href]="favorite.link" class="fs-6" *ngIf="favorite.link !== ''">Link</a>
           <span class="fs-6 text-secondary" *ngIf="favorite.link === ''">No link</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
