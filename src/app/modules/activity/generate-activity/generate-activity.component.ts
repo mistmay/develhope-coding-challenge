@@ -19,9 +19,16 @@ export class GenerateActivityComponent implements OnInit, OnDestroy {
   constructor(private activity: ActivityService, private api: ApiService) { }
 
   ngOnInit(): void {
-    this.activity.getFavoritesSubject().subscribe((res: Activity[]) => {
-      this.activities = res;
-    })
+    this.subscriptions.push(
+      this.activity.getFavoritesSubject().subscribe((res: Activity[]) => {
+        this.activities = res;
+      }));
+    this.subscriptions.push(
+      this.activity.deleteCheck.subscribe((res: string) => {
+        if (this.currentActivity.key === res) {
+          this.btnDisable = false;
+        }
+      }));
   }
 
   ngOnDestroy(): void {
@@ -31,7 +38,7 @@ export class GenerateActivityComponent implements OnInit, OnDestroy {
   }
 
   addFavorite() {
-    this.activity.addFavorite(this.currentActivity)
+    this.activity.addFavorite(this.currentActivity);
     this.btnDisable = true;
   }
 

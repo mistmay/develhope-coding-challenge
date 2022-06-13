@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Activity } from '../models/activity';
 
@@ -6,6 +6,7 @@ import { Activity } from '../models/activity';
   providedIn: 'root'
 })
 export class ActivityService {
+  @Output() deleteCheck: EventEmitter<string> = new EventEmitter<string>();
   favorites: Activity[] = [];
   favoritesSubject: BehaviorSubject<Activity[]> = new BehaviorSubject<Activity[]>([]);
 
@@ -25,6 +26,7 @@ export class ActivityService {
     this.favorites = this.favorites.filter((activity: Activity) => activity.key !== key);
     this.favoritesSubject.next(this.favorites);
     localStorage.setItem('favoriteActivities', JSON.stringify(this.favorites));
+    this.deleteCheck.emit(key);
   }
 
 }
