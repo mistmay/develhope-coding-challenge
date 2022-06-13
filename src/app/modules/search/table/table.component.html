@@ -1,2 +1,51 @@
-
-
+<section class="d-flex flex-column justify-content-center align-items-center gap-4">
+  <div
+    class="table-title d-flex justify-content-center align-items-center text-primary border border-3 border-primary rounded text-center py-2 px-5 fw-bold fs-4">
+    <h3>Search<br>Table</h3>
+  </div>
+  <div class="container-fluid text-center border border-secondary pb-3"
+    *ngIf="searchHistory && searchHistory.length > 0">
+    <div class="row">
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Name</span>
+      </div>
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Gender</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Probability</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Count</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Date</span>
+      </div>
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <span class="fw-bold">Action</span>
+      </div>
+    </div>
+    <div class="row fw-bold" *ngFor="let search of searchHistory"
+      [ngStyle]="{'background-color': getBackground(search.probability)}"
+      [ngClass]="(search.probability * 100 > 40 && search.probability * 100 < 70) ? 'text-primary' : 'text-white'">
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <span>{{search.name | titlecase}}</span>
+      </div>
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <span>{{search.gender}}</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span>{{search.probability * 100}}%</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span>{{search.count}}</span>
+      </div>
+      <div class="col-2 d-none d-md-flex justify-content-center align-items-center px-1 py-3">
+        <span>{{search.date | date:'medium'}}</span>
+      </div>
+      <div class="col-4 col-md-2 d-flex justify-content-center align-items-center px-1 py-3">
+        <button type="button" class="btn btn-primary" (click)="deleteSearch(search.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</section>
