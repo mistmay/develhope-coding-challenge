@@ -11,7 +11,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getRandomActivity(): Observable<Activity> {
-    return this.http.get<Activity>('https://www.boredapi.com/api/activity');
+    return this.http.get<Activity>('https://www.boredapi.com/api/activity')
+
   }
 
 }

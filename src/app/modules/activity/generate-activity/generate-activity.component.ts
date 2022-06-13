@@ -1,4 +1,3 @@
-
 import { ApiService } from './../../../api/api.service';
 
 import { ActivityService } from './../../../services/activity.service';
@@ -25,6 +24,5 @@ export class GenerateActivityComponent implements OnInit {
   }
   randomActivity(){
     this.api.getRandomActivity
-    
   }
 }
