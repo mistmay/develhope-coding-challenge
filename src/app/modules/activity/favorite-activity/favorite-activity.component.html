@@ -29,10 +29,10 @@
           <span class="fs-6 text-secondary">{{favorite.activity}}</span>
         </div>
         <div class="col-1 d-none d-md-flex p-2 justify-content-center">
-          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility <= 0.3">Low</span>
-          <span class="fs-6 text-secondary"
+          <span class="fs-6 text-secondary low" *ngIf="favorite.accessibility <= 0.3">Low</span>
+          <span class="fs-6 text-secondary medium"
             *ngIf="favorite.accessibility > 0.3 && favorite.accessibility < 0.5">Medium</span>
-          <span class="fs-6 text-secondary" *ngIf="favorite.accessibility >= 0.5">High</span>
+          <span class="fs-6 text-secondary high" *ngIf="favorite.accessibility >= 0.5">High</span>
         </div>
         <div class="col-3 col-md-2 d-flex p-2 justify-content-center">
           <span class="fs-6 text-secondary">{{favorite.type}}</span>

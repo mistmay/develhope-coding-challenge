@@ -11,7 +11,7 @@ import { ActivityService } from 'src/app/services/activity.service';
 export class FavoriteActivityComponent implements OnInit, OnDestroy {
   favorites!: Activity[];
   subscription!: Subscription;
-
+  
   constructor(private activityService: ActivityService) { }
 
   ngOnInit(): void {

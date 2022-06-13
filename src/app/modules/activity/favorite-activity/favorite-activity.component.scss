@@ -4,4 +4,16 @@
 
 .data-row {
   border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.low{
+  color: rgb(26, 142, 39) !important;
+}
+.medium{
+  color: rgb(214, 173, 24) !important;
+}
+.high{
+  color: rgb(171, 47, 47) !important;
 }
