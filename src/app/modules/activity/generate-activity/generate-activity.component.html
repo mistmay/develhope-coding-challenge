@@ -1,1 +1,39 @@
-<p>generate-activity works!</p>
+
+<div class="activity-generator">
+    <button class="btn btn-primary"(click)="showActivityGenerator()" (click)="randomActivity()">Genera Attività</button>
+
+
+
+    <div class="container-fluid " *ngIf="activityGenerator">
+        <h1 class="flex center ">ddd</h1>
+        <div class="activity column title-column ">
+            <div class="col-1 col-md-1 d-flex p-2 ">
+                <h3 class="fs-6 fw-bold">Activity</h3>
+            </div>
+            <div class="d-none d-md-flex p-2 ">
+                <h3 class="fs-6 fw-bold">Difficulty</h3>
+                <h3></h3>
+            </div>
+            <div class=" col-md-2 d-flex p-2 ">
+                <h3 class="fs-6 fw-bold ">Type</h3>
+            </div>
+            <div class=" d-none d-md-flex p-2 ">
+                <h3 class="fs-6 fw-bold">Partecipants</h3>
+            </div>
+            <div class="d-none d-md-flex p-2">
+                <h3 class="fs-6 fw-bold">Price</h3>
+            </div>
+            <div class="col-md-2 d-flex p-2 ">
+                <h3 class="fs-6 fw-bold">Link</h3>
+            </div>
+            <div class="col-3 col-md-2 d-flex p-2 ">
+                <h3 class="fs-6 fw-bold">Action</h3>
+            </div>
+            <button class="btn btn-warning"(click)="addFavorite()" >Salva Preferito</button>
+    </div>
+
+
+</div>
+</div>
+
+

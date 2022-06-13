@@ -1,3 +1,6 @@
+import { ApiService } from './../../../api/api.service';
+
+import { ActivityService } from './../../../services/activity.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenerateActivityComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private activity:ActivityService,) { }
+  activityGenerator:boolean  = true
   ngOnInit(): void {
   }
-
+  showActivityGenerator(){
+    this.activityGenerator = !this.activityGenerator
+  }
+  addFavorite(){
+    this.activity.addFavorite
+  }
+  randomActivity(){
+  
+  }
 }
