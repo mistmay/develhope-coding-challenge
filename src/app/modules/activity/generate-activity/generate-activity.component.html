@@ -1,52 +1,32 @@
 <div class="activity-generator">
-    <button class="btn btn-primary" (click)="randomActivity()">Genera Attività</button>
-    <div class="activities" *ngIf="currentActivity">
-        <h1>{{currentActivity.activity}}</h1>
-
-        <div class="activity">
-            <h3 class="fs-6 fw-bold">Difficulty:</h3>
-            <h3>{{currentActivity.accessibility}}</h3>
-        </div>
-        <div class="activity">
-            <h3 class="fs-6 fw-bold ">Type:</h3>
-            <h3>{{currentActivity.type}}</h3>
-        </div>
-        <div class="activity">
-            <h3 class="fs-6 fw-bold">Partecipants:</h3>
-                <h3>{{currentActivity.participants}}</h3>
-        </div>
-        <div class="activity">
-            <h3 class="fs-6 fw-bold">Price:</h3>
-            <h3>{{currentActivity.price}}</h3>
-        </div>
-        <div class="activity">
-            <h3 class="fs-6 fw-bold">Partecipants:</h3>
-                <h3>{{currentActivity.participants}}</h3>
-        </div>
-        <div class="activity">
-            <h3 class="fs-6 fw-bold">Link:</h3>
-            <h3>{{currentActivity.link}}</h3>
-            <span class="fs-6 text-secondary" *ngIf="currentActivity.link === ''">No link</span>
-        </div>
-        <button [disabled]="btnDisable" class="btn btn-warning"(click)="addFavorite()" >Salva Preferito</button>
+  <button class="btn btn-primary" (click)="randomActivity()">Genera Attività</button>
+  <div class="activities" *ngIf="currentActivity">
+    <h1 class="text-center">{{currentActivity.activity}}</h1>
+    <div class="activity">
+      <h3 class="fs-6 fw-bold">Difficulty:</h3>
+      <h3>{{currentActivity.accessibility}}</h3>
     </div>
-   
-    
-
+    <div class="activity">
+      <h3 class="fs-6 fw-bold ">Type:</h3>
+      <h3>{{currentActivity.type}}</h3>
+    </div>
+    <div class="activity">
+      <h3 class="fs-6 fw-bold">Partecipants:</h3>
+      <h3>{{currentActivity.participants}}</h3>
+    </div>
+    <div class="activity">
+      <h3 class="fs-6 fw-bold">Price:</h3>
+      <h3>{{currentActivity.price}}</h3>
+    </div>
+    <div class="activity">
+      <h3 class="fs-6 fw-bold">Partecipants:</h3>
+      <h3>{{currentActivity.participants}}</h3>
+    </div>
+    <div class="activity">
+      <h3 class="fs-6 fw-bold">Link:</h3>
+      <h3>{{currentActivity.link}}</h3>
+      <span class="fs-6 text-secondary" *ngIf="currentActivity.link === ''">No link</span>
+    </div>
+    <button [disabled]="btnDisable" class="btn btn-warning" (click)="addFavorite()">Salva Preferito</button>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
