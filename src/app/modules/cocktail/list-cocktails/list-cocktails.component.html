@@ -1,1 +1,23 @@
-<p>list-cocktails works!</p>
+<section class="container border border-dark rounded py-5 px-2">
+  <form class="d-flex flex-column align-items-center gap-3 text-center mb-5" [formGroup]="form" (ngSubmit)="search()">
+    <h2>Search Cocktail by name or single characters</h2>
+    <input type="text" placeholder="Search" class="rounded p-2" formControlName="search">
+    <span class="text-danger text-center"
+      *ngIf="form.controls['search'].dirty && form.hasError('required', 'search')">Devi inserire
+      almeno un carattere!</span>
+    <span class="text-danger text-center"
+      *ngIf="form.controls['search'].dirty && form.hasError('containsWhiteSpace', 'search')">Non
+      puoi inserire Spazi</span>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Search</button>
+  </form>
+  <div *ngIf="showFirstResult" class="d-flex flex-column align-items-center gap-2 text-center">
+    <ng-container *ngIf="currentList && currentList.length > 0; else noResults">
+      <div class="rounded border border-dark py-3 px-2 w-100" *ngFor="let result of currentList">
+        <span>{{result.strDrink}}</span>
+      </div>
+    </ng-container>
+  </div>
+</section>
+<ng-template #noResults>
+  <p class="fw-bold">No results</p>
+</ng-template>
