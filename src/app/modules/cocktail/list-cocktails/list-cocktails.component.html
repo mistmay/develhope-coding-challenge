@@ -2,10 +2,10 @@
   <form class="d-flex flex-column align-items-center gap-3 text-center" [formGroup]="form" (ngSubmit)="search()">
     <h2 class="fs-3 fw-bold text-white">Search Cocktail by name or single characters</h2>
     <input type="text" placeholder="Search" class="rounded p-2" formControlName="search">
-    <span class="text-danger text-center"
+    <span class="text-white text-center"
       *ngIf="form.controls['search'].dirty && form.hasError('required', 'search')">Devi inserire
       almeno un carattere!</span>
-    <span class="text-danger text-center"
+    <span class="text-white text-center"
       *ngIf="form.controls['search'].dirty && form.hasError('containsWhiteSpace', 'search')">Non
       puoi inserire Spazi</span>
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Search</button>
@@ -48,5 +48,5 @@
   </div>
 </section>
 <ng-template #noResults>
-  <p class="fw-bold">No results</p>
+  <p class="fw-bold text-white">No results</p>
 </ng-template>
