@@ -1,3 +1,28 @@
-<section class="container border border-dark rounded py-5 px-2">
 
+<section class=" border border-dark rounded py-5 px-2 text-center">
+    <div class="container-fluid">
+        <div class="row border border-dark " *ngIf="favorite.length > 0 ; else noparty">
+    
+            <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">Id</div>
+            <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">Nome</div>
+            <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">Category</div>
+            <div class="col-3 d-none d-md-flex justify-content-center align-items-center p-2">Intruction</div>
+            <div class="title-container col-3 d-flex justify-content-center align-items-center p-2">Action</div>
+            
+            
+            </div>
+            <div class="row border border-dark " *ngFor="let item of favorite">
+                <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">{{item.idDrink}}</div>
+                <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">{{item.strDrink}}</div>
+                <div class="title-container col-3 col-md-2 d-flex justify-content-center align-items-center p-2">{{item.strCategory}}</div>
+                <div class="col-3 d-none d-md-flex justify-content-center align-items-center p-2 text-align-center">{{item.strInstructionsIT}}</div>
+                <div class="col-3 d-flex justify-content-center p-2 align-items-center">
+                    <button type="button" class="btn btn-danger" (click)="deleteFavorite(item.idDrink)">Delete</button>
+                </div>
+    </div>
+
+</div>
 </section>
+<ng-template #noparty>
+    <p class="text-center">no martini no party</p>
+</ng-template>
