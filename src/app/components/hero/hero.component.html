@@ -1,0 +1,13 @@
+<ngb-carousel *ngIf="items.length > 0">
+  <ng-template ngbSlide *ngFor="let item of items">
+    <div class="picsum-img-wrapper position-relative">
+      <div class="d-flex" style="background-image: url(https://image.tmdb.org/t/p/original/{{item.backdrop_path}});">
+        <h2 class="text-white d-flex justify-content-center now display-4 pt-3">Now Playing</h2>
+      </div>
+    </div>
+    <div class="carousel-caption">
+        <h3>{{item.original_title}}</h3>
+          <p class="text-truncate">{{item.overview}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>

@@ -1,0 +1,38 @@
+<div class="container-fluid p-0">
+    <app-hero></app-hero>
+</div>
+
+<h3 class="text-white ps-3 pt-3">Popular Movies</h3>
+<div class="d-flex over mb-3" *ngIf="popular.length > 0">
+    <div class="w-100" *ngFor="let item of popular">
+        <app-card [item]="item"></app-card>
+    </div>
+</div>
+
+<h3 class="text-white ps-3 pt-3">Top Rated</h3>
+<div class="d-flex over mb-3" *ngIf="top_rated.length > 0">
+    <div class="w-100" *ngFor="let item of top_rated">
+        <app-card [item]="item"></app-card>
+    </div>
+</div>
+
+<h3 class="text-white ps-3 pt-3">Upcoming</h3>
+<div class="d-flex over mb-3" *ngIf="upcoming.length > 0">
+    <div class="w-100" *ngFor="let item of upcoming">
+        <app-card [item]="item"></app-card>
+    </div>
+</div>
+
+<h3 class="text-white ps-3 pt-3">Trending</h3>
+<div class="d-flex over mb-3" *ngIf="trending.length > 0">
+    <div class="w-100" *ngFor="let item of trending">
+        <app-card [item]="item"></app-card>
+    </div>
+</div>
+
+<h3 class="text-white ps-3 pt-3">Originals</h3>
+<div class="d-flex over mb-3" *ngIf="originals.length > 0">
+    <div class="w-100" *ngFor="let item of originals">
+        <app-card [item]="item"></app-card>
+    </div>
+</div>
