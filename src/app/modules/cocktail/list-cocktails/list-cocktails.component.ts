@@ -17,6 +17,7 @@ export class ListCocktailsComponent implements OnInit, OnDestroy {
   currentList!: Cocktail[] | undefined;
   subscriptions: Subscription[] = [];
   showFirstResult: boolean = false;
+  wow: HTMLAudioElement = new Audio('../../assets/mp3/wow.mp3');
 
   constructor(private api: ApiService, private cocktailService: CocktailService, private fb: FormBuilder) { }
 
@@ -41,11 +42,10 @@ export class ListCocktailsComponent implements OnInit, OnDestroy {
   checkFavorite(): void {
     if (this.currentList) {
       this.currentList.forEach((cocktail: Cocktail) => {
+        cocktail.isFavorite = false;
         this.favorites.forEach((favorite: Cocktail) => {
           if (cocktail.idDrink === favorite.idDrink) {
             cocktail.isFavorite = true;
-          } else {
-            cocktail.isFavorite = false;
           }
         });
       });
@@ -75,6 +75,7 @@ export class ListCocktailsComponent implements OnInit, OnDestroy {
   addFavorite(cocktail: Cocktail): void {
     cocktail.isFavorite = true;
     this.cocktailService.addFavorite(cocktail);
+    this.wow.play();
   }
 
 }

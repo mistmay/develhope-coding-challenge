@@ -1,8 +1,15 @@
-img {
+.cocktail-circle {
+  width: 100px;
   height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid black;
+
+  img {
+    width: 100%;
+  }
 }
 
 svg {
-  height: 50px;
   fill: orange;
 }
