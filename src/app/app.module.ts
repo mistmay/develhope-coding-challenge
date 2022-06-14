@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CocktailModule } from './modules/cocktail/cocktail.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { HomeComponent } from './views/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './views/home/home.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    CocktailModule
+    CocktailModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

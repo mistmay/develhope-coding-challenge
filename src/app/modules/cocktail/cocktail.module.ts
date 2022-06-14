@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListCocktailsComponent } from './list-cocktails/list-cocktails.component';
 import { FavoriteCocktailsComponent } from './favorite-cocktails/favorite-cocktails.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { FavoriteCocktailsComponent } from './favorite-cocktails/favorite-cockta
     FavoriteCocktailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     ListCocktailsComponent,
