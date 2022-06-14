@@ -1,3 +1,14 @@
 .calciopoli {
-    width: 200px !important;
+  width: 200px !important;
+  height: 276px;
+    &:hover > .icon {
+        display: flex;
+    }
+}
+
+
+
+.icon {
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
 }

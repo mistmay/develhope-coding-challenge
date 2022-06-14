@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
   trending: any [] = []
   originals: any [] = []
   subscription: Subscription[] = []
-  hover: boolean = false
+
 
   constructor(private api: ApiService) { }
 
