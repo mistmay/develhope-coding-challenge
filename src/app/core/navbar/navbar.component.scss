@@ -1,0 +1,26 @@
+nav {
+  height: 70px;
+  background-color: rgb(10, 10, 10)
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+  color: lightcoral;
+}
+
+.borderino {
+  border: 1px solid lightcoral;
+  border-radius: 7px;
+  padding: 8px;
+  transition: 0.4s;
+
+  &:hover {
+    background-color: lightcoral;
+    color: black;
+  }
+}
