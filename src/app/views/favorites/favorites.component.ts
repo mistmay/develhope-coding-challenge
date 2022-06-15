@@ -11,7 +11,6 @@ import { FavoriteService } from 'src/app/service/favorite.service';
 })
 export class FavoritesComponent implements OnInit, OnDestroy {
   favorites!: Movie[];
-  genres!: Genre[];
   subscriptions: Subscription[] = [];
 
   constructor(private favoriteService: FavoriteService) { }
@@ -21,11 +20,6 @@ export class FavoritesComponent implements OnInit, OnDestroy {
       this.favoriteService.getFavoritesSubject()
         .subscribe((res: Movie[]) => {
           this.favorites = res;
-        }));
-    this.subscriptions.push(
-      this.favoriteService.getGenres()
-        .subscribe((res: Genre[]) => {
-          this.genres = res;
         }));
   }
 

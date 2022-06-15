@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Endpoint } from '../models/endpoints.model';
-import { Response } from '../models/movie';
+import { Movie, Response } from '../models/movie';
 import { GenreResponse } from '../models/genre';
 
 @Injectable({
@@ -23,9 +23,15 @@ export class ApiService {
   }
 
   getGenres(): Observable<GenreResponse> {
-    return this.http.get<GenreResponse>("https://api.themoviedb.org/3/genre/movie/list?api_key=9357268c262a35e41df4cb3774d28301", {
+    return this.http.get<GenreResponse>(`${this.url}/genre/movie/list`, {
       params: { api_key: this.apiKey }
     })
   }
 
+  getMovie(id: number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.url}/movie/${id}`, {
+      params: { api_key: this.apiKey }
+    })
+  }
+  
 }

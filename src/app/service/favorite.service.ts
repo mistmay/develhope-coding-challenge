@@ -10,7 +10,6 @@ export class FavoriteService {
   favorites: Movie[] = [];
   favoritesSubject: BehaviorSubject<Movie[]> = new BehaviorSubject<Movie[]>([]);
   genres: Genre[] = [];
-  genresSubject: BehaviorSubject<Genre[]> = new BehaviorSubject<Genre[]>([]);
 
   constructor() { }
 
@@ -32,11 +31,19 @@ export class FavoriteService {
 
   setGenres(array: Genre[]): void {
     this.genres = array;
-    this.genresSubject.next(this.genres);
   }
 
-  getGenres(): Observable<Genre[]> {
-    return this.genresSubject.asObservable();
+  getGenre(id: number): string {
+    const GENRE: Genre | undefined = this.genres.find((el: Genre) => el.id === id)
+    if(GENRE) {
+      return GENRE.name
+    } else {
+      return "Unknown Genre"
+    }
+  }
+
+  getArrayLength(): number {
+    return this.genres.length
   }
 
 }
