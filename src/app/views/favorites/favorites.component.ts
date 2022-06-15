@@ -20,6 +20,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
       this.favoriteService.getFavoritesSubject()
         .subscribe((res: Movie[]) => {
           this.favorites = res;
+          console.log(this.favorites)
         }));
   }
 
@@ -27,6 +28,10 @@ export class FavoritesComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach((subscription: Subscription) => {
       subscription.unsubscribe();
     });
+  }
+
+  deleteFavorite(id: number) {
+    this.favoriteService.deleteFavorite(id)
   }
 
 }

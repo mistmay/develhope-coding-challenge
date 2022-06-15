@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
 import { ErrorComponent } from './views/error/error.component';
 import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { WaifuComponent } from './views/waifu/waifu.component';
 
 
 @NgModule({
@@ -27,13 +29,15 @@ import { MovieDetailComponent } from './views/movie-detail/movie-detail.componen
     SearchPipe,
     ErrorComponent,
     MovieDetailComponent,
+    FooterComponent,
+    WaifuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

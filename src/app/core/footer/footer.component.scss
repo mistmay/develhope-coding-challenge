@@ -1,0 +1,16 @@
+section {
+    background: #141414 !important;
+    height: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        fill: lightcoral ;
+    }
+}

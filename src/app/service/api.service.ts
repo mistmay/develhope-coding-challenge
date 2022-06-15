@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Endpoint } from '../models/endpoints.model';
 import { Movie, Response } from '../models/movie';
 import { GenreResponse } from '../models/genre';
+import { Waifu, WaifuResponse } from '../models/waifu.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class ApiService {
     return this.http.get<Movie>(`${this.url}/movie/${id}`, {
       params: { api_key: this.apiKey }
     })
+  }
+
+  getWaifu(): Observable<WaifuResponse> {
+    return this.http.get<WaifuResponse>(`https://api.waifu.im/random/`)
   }
   
 }

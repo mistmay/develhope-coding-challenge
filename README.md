@@ -1,3 +1,6 @@
+# important
+Launch npm install after switching to another branch, since dependecies may be different!
+
 # Challenge 4
 Come avrete notato, man mano che le challenge si susseguivano vi erano meno
 linee guida sul design da seguire, in modo tale da potervi dare libera espressione.
@@ -7,9 +10,6 @@ fantasia, creando una piccola application utilizzando una delle API riportate qu
 seguito.
 Potete prendere spunto dalle challange precedenti o creare qualcosa di nuovo .. a
 voi la scelta!
-
-#important: 
-Launch npm install after switching to another branch, since dependecies may be different!
 
 # CodingChallenge
 

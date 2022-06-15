@@ -1,1 +1,20 @@
-<p>favorites works!</p>
+<div class="container pt-3">
+    <h1 class="fw-bold text-white">My list</h1>
+    <p class="text-light" *ngIf="favorites.length === 0">Here you'll find the movie you love</p>
+</div>
+
+<hr>
+<div class="container mt-4" *ngIf="favorites.length > 0 && favorites">
+    <div class="row mb-3" *ngFor="let favorite of favorites">
+            <div class="col-4 p-2 d-flex justify-content-center align-items-center">
+                <img class="round" width="100%" src="https://image.tmdb.org/t/p/original/{{favorite.poster_path}}" alt="">
+            </div>
+            <div class="col-4 p-2 d-flex justify-content-start align-items-center">
+                <a routerLink="/details/{{favorite.id}}" class="text-left">{{favorite.title}}</a>
+            </div>
+            <div class="col-4 p-2 d-flex justify-content-center align-items-center">
+                <button (click)="deleteFavorite(favorite.id)" class="btn btn-danger">Delete</button>
+        </div>
+        <hr class="mt-2">
+    </div>
+</div>
