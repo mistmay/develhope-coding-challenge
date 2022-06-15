@@ -3,13 +3,13 @@
 </div>
 
 <div class="w-100 d-flex justify-content-center align-items-center ps-3 pt-4">
-  <input type="text" placeholder="Search" class="rounded p-2 text-center w-50" [(ngModel)]="searchedKey">
+  <input type="text" placeholder="Search" class="bg-dark border-0 rounded p-2 text-center text-white w-50" [(ngModel)]="searchedKey">
 </div>
 
 <h3 class="text-white ps-3 pt-3">Popular Movies</h3>
 <ng-container *ngIf="popular">
   <div class="d-flex over mb-3" *ngIf="(popular | search:searchedKey).length > 0; else noResults">
-    <div class="w-100" *ngFor="let item of popular | search:searchedKey">
+    <div class="" *ngFor="let item of popular | search:searchedKey">
       <app-card [item]="item"></app-card>
     </div>
   </div>
@@ -18,7 +18,7 @@
 <h3 class="text-white ps-3 pt-3">Top Rated</h3>
 <ng-container *ngIf="top_rated">
   <div class="d-flex over mb-3" *ngIf="(top_rated | search:searchedKey).length > 0; else noResults">
-    <div class="w-100" *ngFor="let item of top_rated | search:searchedKey">
+    <div class="" *ngFor="let item of top_rated | search:searchedKey">
       <app-card [item]="item"></app-card>
     </div>
   </div>
@@ -27,7 +27,7 @@
 <h3 class="text-white ps-3 pt-3">Upcoming</h3>
 <ng-container *ngIf="upcoming">
   <div class="d-flex over mb-3" *ngIf="(upcoming | search:searchedKey).length > 0; else noResults">
-    <div class="w-100" *ngFor="let item of upcoming | search:searchedKey">
+    <div class="" *ngFor="let item of upcoming | search:searchedKey">
       <app-card [item]="item"></app-card>
     </div>
   </div>
@@ -36,3 +36,4 @@
 <ng-template #noResults>
   <p class="text-white ps-3 pt-3">No results</p>
 </ng-template>
+

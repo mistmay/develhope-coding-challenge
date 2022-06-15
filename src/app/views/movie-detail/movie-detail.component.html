@@ -1,1 +1,65 @@
-<p>movie-detail works!</p>
+<ng-container *ngIf="getGenresLength() > 0">
+    <ng-container *ngIf="currentMovie$ | async as currentMovie ; else Loading">
+            <section class="masthead border-bottom border-3"
+                style="background-image: url(https://image.tmdb.org/t/p/original/{{currentMovie.backdrop_path}});">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="backgroundTitle col-12 text-center">
+                            <h1 class="fw-light">{{currentMovie.title}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container mt-5 pt-5">
+                <h2 class="text-white">Title:
+                    <span class="text-coral fw-bold">{{currentMovie.title}}</span>
+                </h2>
+                <div class="d-flex p-4 text-light lead justify-content-between gap-3">
+                    <div *ngFor="let genre of currentMovie.genres">
+                        <span>{{ getGenre(genre.id) }}</span>
+                    </div>
+                </div>
+                <p class="text-light">{{currentMovie.overview}}</p>
+                <div class="w-100 d-flex gap-2 align-items-center justify-content-between">
+                    <div class="text-light">Likes:
+                        <span class="text-coral">{{ currentMovie.popularity | number: '1.0-0'}}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <label class="me-3 text-light" for="votes">Votes:
+                                <span class="text-coral">{{currentMovie.vote_count}}</span>
+                            </label>
+
+                            <meter id="votes" min="0" max="10" low="4" high="6" optimum="8"
+                                value="{{currentMovie.vote_average}}">
+                            </meter>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </section>
+
+        </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="showError">
+        <div class="d-flex mt-5 pt-5 justify-content-center align-items-center h-100 w-100">
+            <img src="https://http.cat/404" alt="No Movies">
+        </div>
+    </ng-container>
+
+
+    <ng-template #Loading>
+        <div *ngIf="!showError" class="container pt-4 justify-content-center d-flex">
+            <p class="text-danger">loading</p>
+        </div>
+    </ng-template>
+
+    <div class="d-flex justify-content-center mt-5">
+        <a class="btn btn-primary" [routerLink]="'/home'"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-arrow-90deg-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4.854 14.854a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V3.5A2.5 2.5 0 0 1 6.5 1h8a.5.5 0 0 1 0 1h-8A1.5 1.5 0 0 0 5 3.5v9.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4z" />
+            </svg> back</a>
+    </div>

@@ -152,6 +152,11 @@ a {
   font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }
 
+.btn-primary {
+  background: lightcoral !important;
+  border: 0px;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
