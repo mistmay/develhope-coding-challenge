@@ -8,11 +8,14 @@ seguito.
 Potete prendere spunto dalle challange precedenti o creare qualcosa di nuovo .. a
 voi la scelta!
 
+#important: 
+Launch npm install after switching to another branch, since dependecies may be different!
+
 # CodingChallenge
 
 In Branch Master, you will find an empty Angular Project.
 In Branches Challenge-1, 2, 3, 4 you will find different exercizes for a challenge organized by my school.
-Team Group Members: Giuseppe Marchesiello, Giovanni Podda, Biagio Spada.
+Team Group Members: Giuseppe Marchesiello, Giovanni Podda, Biagio Spada, Ermes Marino.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 

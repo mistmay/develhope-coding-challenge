@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="items.length > 0">
+<ngb-carousel *ngIf="items && items.length > 0">
   <ng-template ngbSlide *ngFor="let item of items">
     <div class="picsum-img-wrapper position-relative">
       <div class="d-flex" style="background-image: url(https://image.tmdb.org/t/p/original/{{item.backdrop_path}});">
@@ -6,8 +6,8 @@
       </div>
     </div>
     <div class="carousel-caption">
-        <h3>{{item.original_title}}</h3>
-          <p class="text-truncate">{{item.overview}}</p>
-      </div>
-    </ng-template>
-  </ngb-carousel>
+      <h3>{{item.original_title}}</h3>
+      <p class="text-truncate">{{item.overview}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

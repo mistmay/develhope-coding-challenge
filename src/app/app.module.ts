@@ -10,6 +10,10 @@ import { FavoritesComponent } from './views/favorites/favorites.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { CardComponent } from './components/card/card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './pipes/search.pipe';
+import { ErrorComponent } from './views/error/error.component';
+import { MovieDetailComponent } from './views/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -20,12 +24,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FavoritesComponent,
     HeroComponent,
     CardComponent,
+    SearchPipe,
+    ErrorComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
